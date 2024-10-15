@@ -1,0 +1,55 @@
+.flip {
+  line-height: 32px;
+  text-align: center;
+}
+
+.flip::before,
+.flip::after {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.flip::before {
+  top: 0;
+}
+
+.flip::after {
+  top: 100%;
+}
+
+/* forwards */
+.flip.forwards {
+  transform: translateY(0);
+}
+
+.flip.forwards.animate {
+  transition: transform 0.6s cubic-bezier(0.41, 0, 0.59, 0.99);
+  transform: translateY(-100%);
+}
+
+.flip.forwards::before {
+  content: attr(data-prev-value);
+}
+.flip.forwards::after {
+  content: attr(data-next-value);
+}
+
+/* backwards */
+.flip.backwards {
+  transform: translateY(-100%);
+}
+
+.flip.backwards.animate {
+  transition: transform 0.6s cubic-bezier(0.41, 0, 0.59, 0.99);
+  transform: translateY(0);
+}
+
+.flip.backwards::before {
+  content: attr(data-next-value);
+}
+.flip.backwards::after {
+  content: attr(data-prev-value);
+}

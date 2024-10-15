@@ -1,0 +1,6 @@
+.container {
+  --background: var(--app-color-bg-container);
+  background-image: radial-gradient(transparent 1px, var(--background) 1px);
+  background-size: 4px 4px;
+  backdrop-filter: blur(3px);
+}

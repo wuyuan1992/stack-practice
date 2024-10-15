@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background-color: var(--app-color-bg-container);
+}
+
+* {
+  color: var(--app-color-text);
+}
+
+/* TODO 全局 css 属性不生效 */
+@supports (-webkit-appearance: none) {
+  .root .scroll-element::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    color: var(--app-color-text);
+  }
+
+  .root .scroll-element::-webkit-scrollbar-thumb {
+    background-color: var(--app-color-text);
+    border-radius: 999px;
+  }
+
+  .root .scroll-element::-webkit-scrollbar-thumb:hover {
+    background-color: var(--app-color-text-tertiary);
+  }
+
+  .root .scroll-element::-webkit-scrollbar-track {
+    background: var(--app-color-bg-container);
+    border-radius: 999px;
+  }
+
+  .root .scroll-element::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+/* 检测支持 scrollbar-color 的浏览器 (如 Firefox) */
+/* @supports (scrollbar-color: auto) {
+  .root .scroll-element {
+    scrollbar-color: var(--app-color-text);
+    scrollbar-width: auto;
+  }
+} */

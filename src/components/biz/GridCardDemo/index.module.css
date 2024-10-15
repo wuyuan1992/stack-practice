@@ -1,0 +1,41 @@
+.content {
+  transition: filter 0.2s ease-in-out;
+}
+
+.content:hover {
+  filter: blur(8px);
+  will-change: filter;
+}
+
+.corner::before,
+.corner::after {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  background: inherit;
+  position: absolute;
+}
+
+.cornerTl::before {
+  top: 100%;
+  left: 0;
+  background: radial-gradient(circle at bottom right, transparent 0%, transparent 0.5rem, white 0.5rem) no-repeat;
+}
+
+.cornerTl::after {
+  top: 0;
+  left: 100%;
+  background: radial-gradient(circle at bottom right, transparent 0%, transparent 0.5rem, white 0.5rem) no-repeat;
+}
+
+.cornerBr::before {
+  bottom: 100%;
+  right: 0;
+  background: radial-gradient(circle at top left, transparent 0%, transparent 0.5rem, white 0.5rem) no-repeat;
+}
+
+.cornerBr::after {
+  bottom: 0;
+  right: 100%;
+  background: radial-gradient(circle at top left, transparent 0%, transparent 0.5rem, white 0.5rem) no-repeat;
+}

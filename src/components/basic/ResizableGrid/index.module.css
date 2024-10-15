@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  align-items: stretch;
+  justify-items: stretch;
+  cursor: default;
+  width: 100%;
+  height: 100%;
+}
+
+.container.active {
+  cursor: ew-resize;
+}
+
+.container.vertical.active {
+  cursor: ns-resize;
+}
+
+.resizer {
+  background: var(--app-color-success-border);
+}
+
+.resizer {
+  background: var(--app-color-primary-border-hover);
+}
